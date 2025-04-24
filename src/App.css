@@ -1,42 +1,128 @@
+body {
+  font-family: "Inter", sans-serif;
+  background-color: rgba(7, 7, 7, 0.911);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 10px 10px;
+  border-radius: 25px;
+  margin: 20px;
+  width: 800px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 10px;
+}
+
+header > h1 {
+  letter-spacing: 5px;
+}
+
+header > p {
   text-align: center;
+  width: 300px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.dice-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  padding: 10px;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+}
+
+.dice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  font-size: 40px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 50px;
+  text-align: center;
+  border: 1px solid black;
+  font-family: "Inter", sans-serif;
+}
+
+.dice:hover {
+  cursor: pointer;
+}
+
+.dice.clicked {
+  background-color: rgb(41, 190, 116);
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.button {
+  width: 100px;
+  height: 50px;
+  font-family: "Inter", sans-serif;
+  border-radius: 10px;
+  font-size: 25px;
+  text-align: center;
+  color: white;
+  background-color: black;
+}
+
+.win-text {
+  font-weight: 700;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 900px) {
+  .button {
+    width: 50px;
+    height: 25px;
+    font-size: 12px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .dice {
+    width: 20px;
+    height: 20px;
+    padding: 20px;
+    font-size: 17px;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  header > h1 {
+    font-size: 30px;
   }
-}
 
-.card {
-  padding: 2em;
-}
+  header > p {
+    font-size: 12px;
+  }
 
-.read-the-docs {
-  color: #888;
+  .win-text {
+    font-size: 15px;
+  }
 }
